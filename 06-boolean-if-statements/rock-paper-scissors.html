@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Rock-paper-scissors</title>
+  </head>
+  <body>
+    <p>Rock-paper-scissors</p>
+    <div>
+      <button
+        onclick="
+        if (randomNumber >= 0 && randomNumber <1/3){
+          computerMove = 'Rock';
+          result = 'Tie';
+        } else if (randomNumber >= 1/3 && randomNumber <2/3){
+          computerMove = 'Paper';
+          result = 'You win';
+        } else {
+          computerMove = 'Scissors';
+          result = 'You lose'
+        }
+
+        alert(`You choose: Rock. Computer chooses: ${computerMove}. Result: ${result}`)
+        "
+      >
+        Rock
+      </button>
+      <button
+        onclick="
+        if (randomNumber >= 0 && randomNumber <1/3){
+          alert(`You choose Paper. Computer choose Rock. Then YOU win`)
+        } else if (randomNumber >= 1/3 && randomNumber <2/3){
+          alert(`You choose Paper. Computer choose Paper. Then no win`)
+        } else {
+          alert(`You choose Paper. Computer choose Scissors. Then YOU lose`)
+        }
+      "
+      >
+        Paper
+      </button>
+      <button
+        onclick="
+        if (randomNumber >= 0 && randomNumber <1/3){
+          alert(`You choose Scissors. Computer choose Rock. Then YOU lose`)
+        } else if (randomNumber >= 1/3 && randomNumber <2/3){
+          alert(`You choose Scissors. Computer choose Paper. Then YOU win`)
+        } else {
+          alert(`You choose Scissors. Computer choose Scissors. Then no win`)
+        }
+      "
+      >
+        Scissors
+      </button>
+    </div>
+    <script>
+      const randomNumber = Math.random();
+      let computerMove = '';
+      let result = '';
+    </script>
+  </body>
+</html>

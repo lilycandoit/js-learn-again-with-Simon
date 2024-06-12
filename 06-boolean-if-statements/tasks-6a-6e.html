@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>else-if statements</title>
+  </head>
+  <body>
+    <p>hiiii, you can do it!</p>
+    <script>
+      // 6a,b,c
+      /*
+      const hour = new Date().getHours();
+      const name = 'Lily';
+      let time;
+      console.log(hour);
+      if (hour >= 6 && hour <= 12) {
+        time = 'Good Morning';
+      } else if (hour >= 13 && hour < 17) {
+        time = 'Good Afternoon';
+      } else {
+        time = 'Good Night';
+      }
+
+      alert(`${time} ${name}`);
+      */
+
+      //6d, e- using ternary operator
+      const age = 5;
+      const isHoliday = false;
+
+      // if ((age <= 6 || age >= 65) && !isHoliday) {
+      //   console.log('Discount');
+      // } else {
+      //   console.log('No discount');
+      // }
+
+      const discountAge = age <= 6 || age >= 65;
+      const discount = discountAge && !isHoliday ? 'Discount' : 'No discount';
+      console.log(discount);
+    </script>
+  </body>
+</html>

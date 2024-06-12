@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>cart-quantity</title>
+  </head>
+  <body>
+    <button
+      onclick="
+      alert(`Cart Quantity: ${cartQuantity}`)
+    "
+    >
+      Show Quantity
+    </button>
+    <button
+      onclick="
+      // cartQuantity += 1; same below
+      cartQuantity ++;
+      alert(`Added to cart. Items: ${cartQuantity}`);
+    "
+    >
+      Add to cart
+    </button>
+    <button
+      onclick="
+      cartQuantity --;
+      alert(`Item is removed.
+      
+      Items left: ${cartQuantity}`)
+    "
+    >
+      Remove from Cart
+    </button>
+    <button
+      onclick="
+      cartQuantity += 2; 
+      alert('Cart added 2')"
+    >
+      +2
+    </button>
+    <button
+      onclick="
+      cartQuantity += 3; 
+      alert('Cart added 3')"
+    >
+      +3
+    </button>
+    <button
+      onclick="
+      cartQuantity = 0;
+      alert('Cart is empty')
+    "
+    >
+      Reset Cart
+    </button>
+
+    <script>
+      let cartQuantity = 0;
+    </script>
+  </body>
+</html>
