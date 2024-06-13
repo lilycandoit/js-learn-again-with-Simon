@@ -60,12 +60,15 @@
       function updateCartQuantity(change) {
         if (cartQuantity + change > 10) {
           alert('The cart is full');
-        } else if (cartQuantity + change < 0) {
-          alert('Not enough items in cart to remove');
-        } else {
-          cartQuantity += change;
-          alert(`Cart is updated. Items: ${cartQuantity}`);
+          return;
         }
+
+        if (cartQuantity + change < 0) {
+          alert('Not enough items in cart to remove');
+          return;
+        }
+        cartQuantity += change;
+        alert(`Cart is updated. Items: ${cartQuantity}`);
       }
     </script>
   </body>
