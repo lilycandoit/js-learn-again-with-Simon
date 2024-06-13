@@ -14,19 +14,30 @@
       have no idea what you might be missing!
     </p>
     <script>
-      //7g
+      //7g, h
       function convertLength(length, from, to) {
-        // const result =
-        //   from === 'miles' ? `${length}*1.6 ${to}` : `${length}/1.6 ${to}`;
+        // if use ternary operator =>> it WORKS =>> just remember to RETURN (line 23)
+        /*
+        const result =
+          from === 'miles' ? `${length * 1.6} ${to}` : `${length / 1.6} ${to}`;
+        return result;
+        */
 
+        // but in this task, having no many scenarios =>> should use normal else-if instead of shortcut
         if (from === to) {
           const result = length;
           return `${result} ${to}`;
-        } else if (from === 'km') {
-          const result = length / 1.6;
+        } else if (from === 'km' && to === 'miles') {
+          // const result = length / 1.6;
+          return `${length / 1.6} ${to}`; // if simple, can return in one row like this.
+        } else if (from === 'km' && to === 'ft') {
+          const result = length * 3281;
           return `${result} ${to}`;
-        } else if (from === 'miles') {
+        } else if (from === 'miles' && to === 'km') {
           const result = length * 1.6;
+          return `${result} ${to}`;
+        } else if (from === 'miles' && to === 'ft') {
+          const result = length * 5280;
           return `${result} ${to}`;
         }
       }
@@ -36,6 +47,12 @@
       const convert3 = convertLength(50, 'km', 'km');
 
       console.log(convert1, convert2, convert3);
+
+      const convert4 = convertLength(5, 'miles', 'km');
+      const convert5 = convertLength(5, 'miles', 'ft');
+      const convert6 = convertLength(5, 'km', 'ft');
+
+      console.log(convert4, convert5, convert6);
     </script>
   </body>
 </html>
