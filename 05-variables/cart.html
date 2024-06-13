@@ -18,26 +18,21 @@
     </button>
     <button
       onclick="
-      // cartQuantity += 1; same below
-      cartQuantity ++;
-      showQuantity();
+      updateCartQuantity(1);
     "
     >
       Add to cart
     </button>
     <button
       onclick="
-      cartQuantity --;
-      const removeItems = cartQuantity <=0 ? 'Not enough items in the cart' : `Removed from the cart. Items left: ${cartQuantity}`;
-      alert(removeItems);
+      updateCartQuantity(-1);
     "
     >
       Remove from Cart
     </button>
     <button
       onclick="
-      cartQuantity += 2; 
-      showQuantity();
+      updateCartQuantity(2);
       "
       ;
     >
@@ -45,15 +40,15 @@
     </button>
     <button
       onclick="
-      cartQuantity += 3; 
-      showQuantity();"
+      updateCartQuantity(-3);
+      "
     >
-      +3
+      -3
     </button>
     <button
       onclick="
       cartQuantity = 0;
-      showQuantity();
+      alert(`Cart is reset`);
     "
     >
       Reset Cart
@@ -61,12 +56,16 @@
 
     <script>
       let cartQuantity = 0;
-      function showQuantity() {
-        const result =
-          cartQuantity > 10
-            ? 'The cart is full'
-            : `Added to cart. Items: ${cartQuantity}`;
-        console.log(result);
+
+      function updateCartQuantity(change) {
+        if (cartQuantity + change > 10) {
+          alert('The cart is full');
+        } else if (cartQuantity + change < 0) {
+          alert('Not enough items in cart to remove');
+        } else {
+          cartQuantity += change;
+          alert(`Cart is updated. Items: ${cartQuantity}`);
+        }
       }
     </script>
   </body>
