@@ -24,6 +24,15 @@
         */
 
         // but in this task, having no many scenarios =>> should use normal else-if instead of shortcut
+
+        //7i
+        // should use &&, not ||
+        if (from !== 'km' && from !== 'miles' && from !== 'ft') {
+          return `Invalid unit: ${from}`;
+        } else if (to !== 'km' && to !== 'miles' && to !== 'ft') {
+          return `Invalid unit: ${to}`;
+        }
+
         if (from === to) {
           const result = length;
           return `${result} ${to}`;
@@ -40,6 +49,12 @@
           const result = length * 5280;
           return `${result} ${to}`;
         }
+
+        /* just apply for small scenario
+        else {
+          return `Invalid unit: ${from}.`;
+        }
+        */
       }
 
       const convert1 = convertLength(50, 'miles', 'km');
@@ -51,8 +66,9 @@
       const convert4 = convertLength(5, 'miles', 'km');
       const convert5 = convertLength(5, 'miles', 'ft');
       const convert6 = convertLength(5, 'km', 'ft');
+      const convert7 = convertLength(5, 'hello', 'abc');
 
-      console.log(convert4, convert5, convert6);
+      console.log(convert4, convert5, convert6, convert7);
     </script>
   </body>
 </html>
