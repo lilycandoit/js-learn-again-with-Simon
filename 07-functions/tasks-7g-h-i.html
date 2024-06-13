@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>tasks 7g,h,i</title>
+  </head>
+  <body>
+    <p>
+      hey take action and just do it, don't skip even the smallest task. You
+      have no idea what you might be missing!
+    </p>
+    <script>
+      //7g
+      function convertLength(length, from, to) {
+        // const result =
+        //   from === 'miles' ? `${length}*1.6 ${to}` : `${length}/1.6 ${to}`;
+
+        if (from === to) {
+          const result = length;
+          return `${result} ${to}`;
+        } else if (from === 'km') {
+          const result = length / 1.6;
+          return `${result} ${to}`;
+        } else if (from === 'miles') {
+          const result = length * 1.6;
+          return `${result} ${to}`;
+        }
+      }
+
+      const convert1 = convertLength(50, 'miles', 'km');
+      const convert2 = convertLength(32, 'km', 'miles');
+      const convert3 = convertLength(50, 'km', 'km');
+
+      console.log(convert1, convert2, convert3);
+    </script>
+  </body>
+</html>
