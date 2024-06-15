@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>08-exercises</title>
+  </head>
+  <body>
+    <p>Hiii, focus, gotta focus, all you have to do is focus.</p>
+    <script>
+      //8a,b,c
+      const product1 = {
+        name: 'basketball',
+        price: 2095,
+        currency: 'cent',
+        'delivery-time': '3 days', // or ['delivery-time']: '3 days'
+      };
+
+      const product2 = {
+        name: 'basketball',
+        price: 2095,
+        currency: 'cent',
+        'delivery-time': '3 days', // or ['delivery-time']: '3 days'
+      };
+
+      product1.price = 2595;
+
+      //18d
+      function comparePrice(product1, product2) {
+        const result =
+          product1.price < product2.price
+            ? 'product1 is less expensive'
+            : 'product1 is more expensive';
+        return result;
+      }
+
+      const checkProducts = comparePrice(product1, product2);
+      console.log(product1, product2, checkProducts);
+
+      //18e
+      function isSameProduct(pro1, pro2) {
+        if (pro1.price === pro2.price && pro1.name === pro2.name) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+
+      console.log(isSameProduct(product1, product2));
+
+      //8g
+      function repeatStringNumTimes(string, times) {
+        var repeatedString = '';
+        while (times > 0) {
+          repeatedString += string;
+          times--;
+        }
+        return repeatedString;
+      }
+      console.log(repeatStringNumTimes('abc', 3));
+
+      // the easier way for 8g => use method repeat:
+      function repeatstrings(string, times){
+        if (times > 0 ){
+          return string.repeat(times);
+        } else {
+          return '';
+        }
+      }
+    </script>
+  </body>
+</html>
