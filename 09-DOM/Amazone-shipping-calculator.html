@@ -15,12 +15,17 @@
     <input
       type="text"
       placeholder="Cost of order"
-      onkeypress="displayCost()"
+      onkeydown="onkeydownCost(event)"
     />
     <button onclick="displayCost()">Calculate</button>
     <p class="js-result"></p>
 
     <script>
+      function onkeydownCost(event) {
+        if (event.key === 'Enter') {
+          displayCost();
+        }
+      }
       function displayCost() {
         const orderInputEl = document.querySelector('input');
         let totalCost = Number(orderInputEl.value);
@@ -29,6 +34,9 @@
           totalCost = totalCost + 10;
         }
         document.querySelector('.js-result').innerText = `$${totalCost}`;
+
+        // delete input data after hitting enter/calculator button. 
+        orderInputEl.value = '';
       }
     </script>
   </body>
