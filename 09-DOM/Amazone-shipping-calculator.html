@@ -31,11 +31,11 @@
         let totalCost = Number(orderInputEl.value);
 
         if (totalCost < 40) {
-          totalCost = totalCost + 10;
+          totalCost = Math.round(totalCost + 10);
         }
         document.querySelector('.js-result').innerText = `$${totalCost}`;
 
-        // delete input data after hitting enter/calculator button. 
+        // delete input data after hitting enter/calculator button.
         orderInputEl.value = '';
       }
     </script>
