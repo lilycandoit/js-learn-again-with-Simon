@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>09-exercises</title>
+  </head>
+  <body>
+    <!-- 9c.heads-tails -->
+    <button
+      class="heads"
+      onclick="showOption('heads')"
+    >
+      heads
+    </button>
+    <button
+      class="tails"
+      onclick="showOption('tails')"
+    >
+      tails
+    </button>
+    <p class="showOption"></p>
+
+    <!-- 9d,e -->
+    <input
+      type="text"
+      placeholder="Input your name"
+      onkeydown="pressEnter(event)"
+    />
+    <button onclick="showName()">Submit</button>
+    <p class="show-name"></p>
+
+    <script>
+      //9c
+      function showOption(option) {
+        document.querySelector(
+          '.showOption'
+        ).innerHTML = `You chose: ${option}`;
+      }
+
+      //9d, e
+      function pressEnter(event) {
+        if (event.key === 'Enter') {
+          showName();
+        }
+      }
+      function showName() {
+        const nameInput = document.querySelector('input').value;
+
+        document.querySelector(
+          '.show-name'
+        ).innerHTML = `Your name: ${nameInput}`;
+      }
+    </script>
+  </body>
+</html>
