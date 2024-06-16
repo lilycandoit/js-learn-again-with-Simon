@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>10e exercise</title>
+    <style>
+      button {
+        border: none;
+        background-color: black;
+        color: white;
+        border-radius: 20px;
+        padding: 8px 15px;
+        font-weight: bold;
+      }
+
+      .is-toggled {
+        background-color: blue;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="js-btn1" onclick="checkToggle('.js-btn1')">Gaming</button>
+    <button class="js-btn2" onclick="checkToggle('.js-btn2')">Music</button>
+    <button class="js-btn3" onclick="checkToggle('.js-btn3')">Tech</button>
+    <script>
+      function checkToggle(selector) {
+        const btnEl = document.querySelector(selector);
+        
+        if (!btnEl.classList.contains('is-toggled')) {
+          btnEl.classList.add('is-toggled');
+        } else {
+          btnEl.classList.remove('is-toggled');
+        };
+      }
+    </script>
+  </body>
+</html>
