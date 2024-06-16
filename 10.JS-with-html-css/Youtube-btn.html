@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Youtube btn</title>
+    <style>
+      body {
+        font-family: Arial;
+      }
+
+      button {
+        background-color: black;
+        color: white;
+        padding: 6px 12px;
+        border-radius: 50px;
+        border: none;
+        cursor: pointer;
+      }
+
+      .subcribed-btn {
+        background-color: lightgray;
+        color: black;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Youtube subscribe button</p>
+    <button
+      class="js-subcribe-btn"
+      onclick="subcribeBtn()"
+    >
+      Subcribe
+    </button>
+    <script>
+      function subcribeBtn() {
+        const btnEl = document.querySelector('.js-subcribe-btn');
+
+        if (btnEl.innerText === 'Subcribe') {
+          btnEl.innerHTML = 'Subcribed';
+          btnEl.classList.add('subcribed-btn');
+        } else {
+          btnEl.innerHTML = 'Subcribe';
+          btnEl.classList.remove('subcribed-btn');
+        }
+      }
+    </script>
+  </body>
+</html>
