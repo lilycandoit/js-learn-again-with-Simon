@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Amazon shipping calculator</title>
+    <style>
+      .js-result {
+        font-weight: bold;
+      }
+      .js-error {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Amazone shipping calculator</p>
+    <p>Orders under $40 = +$10 shipping.</p>
+    <p>Orders over $40 = FREE shipping.</p>
+    <input
+      type="text"
+      placeholder="Cost of order"
+      onkeydown="onkeydownCost(event)"
+    />
+    <button onclick="displayCost()">Calculate</button>
+    <p class="js-result"></p>
+
+    <script>
+      function onkeydownCost(event) {
+        if (event.key === 'Enter') {
+          displayCost();
+        }
+      }
+      function displayCost() {
+        const orderInputEl = document.querySelector('input');
+        let totalCost = Number(orderInputEl.value);
+        const resultEl = document.querySelector('.js-result');
+
+        if (totalCost < 40 && totalCost > 0) {
+          totalCost = Math.round(totalCost + 10);
+        }
+        resultEl.innerText = `$${totalCost}`;
+
+        if (totalCost < 0) {
+          resultEl.innerText = `Error: cost cannot be less than $0`;
+
+          resultEl.classList.add('js-error');
+        }
+
+        // delete input data after hitting enter/calculator button.
+        orderInputEl.value = '';
+      }
+    </script>
+  </body>
+</html>
