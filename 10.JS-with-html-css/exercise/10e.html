@@ -24,18 +24,44 @@
     </style>
   </head>
   <body>
-    <button class="js-btn1" onclick="checkToggle('.js-btn1')">Gaming</button>
-    <button class="js-btn2" onclick="checkToggle('.js-btn2')">Music</button>
-    <button class="js-btn3" onclick="checkToggle('.js-btn3')">Tech</button>
+    <button
+      class="js-btn1"
+      onclick="checkToggle('.js-btn1')"
+    >
+      Gaming
+    </button>
+    <button
+      class="js-btn2"
+      onclick="checkToggle('.js-btn2')"
+    >
+      Music
+    </button>
+    <button
+      class="js-btn3"
+      onclick="checkToggle('.js-btn3')"
+    >
+      Tech
+    </button>
     <script>
       function checkToggle(selector) {
         const btnEl = document.querySelector(selector);
-        
+
         if (!btnEl.classList.contains('is-toggled')) {
+          // before turning this on, need to check if there's already a button turned on and turn it off
+          turnOffPreviousButton();
+
           btnEl.classList.add('is-toggled');
         } else {
           btnEl.classList.remove('is-toggled');
-        };
+        }
+      }
+
+      function turnOffPreviousButton() {
+        const previousButton = document.querySelector('.is-toggled');
+
+        if (previousButton) {
+          previousButton.classList.remove('is-toggled');
+        }
       }
     </script>
   </body>
