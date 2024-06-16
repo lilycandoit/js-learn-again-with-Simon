@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Amazon shipping calculator</title>
+  </head>
+  <body>
+    <p>Amazone shipping calculator</p>
+    <p>Orders under $40 = +$10 shipping.</p>
+    <p>Orders over $40 = FREE shipping.</p>
+    <input
+      type="text"
+      placeholder="Cost of order"
+      onkeypress="displayCost()"
+    />
+    <button onclick="displayCost()">Calculate</button>
+    <p class="js-result"></p>
+
+    <script>
+      function displayCost() {
+        const orderInputEl = document.querySelector('input');
+        let totalCost = Number(orderInputEl.value);
+
+        if (totalCost < 40) {
+          totalCost = totalCost + 10;
+        }
+        document.querySelector('.js-result').innerText = `$${totalCost}`;
+      }
+    </script>
+  </body>
+</html>
