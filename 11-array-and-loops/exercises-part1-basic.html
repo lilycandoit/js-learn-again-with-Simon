@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>hiii, let do exercise</p>
+    <script>
+      //11b
+      /*
+      function getLastValue(array) {
+        return array[array.length - 1];
+      }
+
+      const array1 = [1, 4, 6, 8];
+      const array2 = ['hi', 7, 'hey there', true];
+      console.log(getLastValue(array2));
+      */
+
+      //11c
+      /*
+      function arraySwap(array) {
+        const lastIndex = array.length - 1;
+
+        const lastValue = array[lastIndex];
+        const firstValue = array[0];
+
+        array[0] = lastValue;
+        array[lastIndex] = firstValue;
+
+        return array;
+      }
+      console.log(arraySwap([1, 4, 5, 8, 'me']));
+      console.log(arraySwap([1, 20, 22, 24, 5]));
+      console.log(arraySwap(['hi', 'hello', 'hey']));
+      
+
+      //NOTE: we need to save the values first before swapping. otherwise, if we swap directly like below, we would lose one of the values.
+
+      /*
+      function arraySwap(){
+        array[0]=array[array.length-1];
+        array[array.length-1]=array[0];
+        return array;
+      }
+      */
+
+      //11d- DONE
+      /*
+      let total = 0;
+      for (let i = 0; i <= 10; i += 2) {
+        total += i;
+      }
+        
+      console.log(total);
+      */
+
+      //11e - DONE
+      /* 
+      for (let i = 5; i >= 0; i--) {
+        console.log(i);
+      }
+      */
+
+      //11f
+      //using while loop for 11d -DONE
+      /* 
+      let i = 0;
+      let total2 = 0;
+      while (i <= 10) {
+        total2 += i;
+        i += 2;
+      }
+      console.log(total2);
+      */
+
+      //using while loop for 11e - DONE
+      /*
+      let i = 5;
+
+      while (i >= 0) {
+        console.log(i);
+        i--;
+      }
+        */
+
+      // 19g
+      /*
+      const nums = [2, 4, 6, 8];
+      let result = [];
+
+      for (i = 0; i < nums.length; i++) {
+        const num = nums[i] + 1;
+        result.push(num);
+      }
+
+      console.log(result);
+      */
+
+      //11h- DONE
+      /*
+      function addOne(array) {
+        let newArray = [];
+        for (i = 0; i < array.length; i++) {
+          const item = array[i] + 1;
+          newArray.push(item);
+        }
+        return newArray;
+      }
+
+      console.log(addOne([-4, -5, 2, 6, 8]));
+      */
+
+      // 11i - DONE
+      /*
+      function addNum(arr, num) {
+        let result = [];
+        arr.forEach((item) => {
+          const newItem = item + num;
+          result.push(newItem);
+        });
+        return result;
+      }
+
+      console.log(addNum([-4, -5, 2, 6, 8], 5));
+      */
+
+      //11j - DONE
+      /*
+      function addArrays(arr1, arr2) {
+        let result = [];
+
+        for (let i = 0; i < arr1.length; i++) {
+          result.push(arr1[i] + arr2[i]);
+        }
+
+        return result;
+      }
+
+      console.log(addArrays([1, 3, 5], [2, 4, 6]));
+      */
+
+      //11k - DONE
+      function countPositive(nums) {
+        let result = [];
+
+        nums.forEach((element) => {
+          element > 0 && result.push(element);
+        });
+
+        return result;
+      }
+
+      console.log(countPositive([-2, 3, -1, 6, 7, 8]));
+    </script>
+  </body>
+</html>
