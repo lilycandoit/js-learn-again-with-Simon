@@ -35,7 +35,7 @@
       console.log(minMax([1, -3, 8, 3]));
       */
 
-      //11m
+      //11m - DONE 
       function minMax(nums) {
         // we set the starting values of mins and max to null inially this time.
         const minMax = {
@@ -44,11 +44,11 @@
         };
 
         nums.forEach((element) => {
-          if (minMax.min === null || element < minMax.min) {
+          if (element < minMax.min || minMax.min === null ) {
             minMax.min = element;
           }
 
-          if (minMax.min === null || element > minMax.max) {
+          if (element > minMax.max || minMax.max === null) {
             minMax.max = element;
           }
         });
