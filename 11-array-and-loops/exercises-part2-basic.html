@@ -23,8 +23,7 @@
       });
       */
 
-
-    //11p - option 1: using break
+      //11p - option 1: using break
 
       /*
       let words = ['hello', 'world', 'search', 'good', 'search'];
@@ -45,8 +44,9 @@
       console.log(index);
       */
 
-      //11p - option 2: using indexOf 
-      
+      //11p - option 2: using indexOf
+
+      /*
       const stringsList = ['hello', 'search', 'yea', 1, true, 'search', 6];
 
       const word = 'search';
@@ -57,9 +57,48 @@
       } else {
         console.log(-1);
       }
-      
+        */
 
+      //11q
+      // option 1 - DONE - using indexOf
+      /*
+      function findIndex(array, word) {
+        const index = array.indexOf(word);
+        if (index !== -1) {
+          console.log(word, index);
+        } else {
+          console.log(-1);
+        }
+      }
+
+      findIndex(['hello', 'search', 'yea', 1, true, 'search', 6], 'search');
+      */
+
+      //option2: using for loop- DONE
+      /*
+      function findIndex(array, word) {
+        for (let i = 0; i < array.length; i ++) {
+          if (array[i] === word) {
+            return i;
+          }
+        };
+
+        return -1;
+      }
+        */
       
+      //shorter way of mordern JS: using findIndex
+      function findIndex2(array, word) {
+        return array.findIndex(element => element === word);
+      }
+      const result = findIndex2(
+        ['hello', 'search', 'yea', 1, true, 'search', 6],
+        'search'
+      );
+
+      console.log(result);
+
+
     </script>
   </body>
 </html>
