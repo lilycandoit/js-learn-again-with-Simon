@@ -14,18 +14,25 @@
   </head>
   <body>
     <p>To do list</p>
-    <input
-      type="text"
-      placeholder="Todo name"
-      ;
-    />
-    <button
-      class="add-btn"
-      onclick="addTodo()"
-    >
-      Add
-    </button>
-    <div class="js-todo-list"></div>
+    <div class="todo-grid-input">
+      <input
+        type="text"
+        placeholder="Todo name"
+        class="js-input-name"
+      />
+      <input
+        type="date"
+        class="js-input-due-date"
+      />
+
+      <button
+        class="add-btn"
+        onclick="addTodo()"
+      >
+        Add
+      </button>
+    </div>
+    <div class="js-todo-list todo-grid"></div>
     <script src="main.js"></script>
   </body>
 </html>

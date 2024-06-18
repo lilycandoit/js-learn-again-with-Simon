@@ -6,23 +6,44 @@ renderTodoList();
 function renderTodoList() {
   let todoListHTML = '';
 
-  todoList.forEach((item) => {
+  for (let i = 0; i < todoList.length; i++) {
+    const itemObject = todoList[i];
+    // const name = itemObject.name;
+    // const dueDate = itemObject.dueDate;
+    const { name, dueDate } = itemObject;
     const html = `
-      <p class="list">${item}</p>
+      <div>${name}</div>
+      <div>${dueDate}</div>
+      <div>
+        <button onclick="
+          todoList.splice(${i}, 1);
+          renderTodoList();
+        ">Delete</button>
+      </div>
     `;
 
     todoListHTML += html;
-  });
+  }
   document.querySelector('.js-todo-list').innerHTML = todoListHTML;
 }
 
 function addTodo() {
-  const inputEl = document.querySelector('input');
-  const name = inputEl.value;
-  todoList.push(name);
+  const inputNameEl = document.querySelector('.js-input-name');
+  const name = inputNameEl.value;
+
+  const dueDateEl = document.querySelector('.js-input-due-date');
+  const dueDate = dueDateEl.value;
+
+  todoList.push({
+    // name: name,
+    // dueDate: dueDate,
+    name,
+    dueDate,
+  });
 
   // to clear input after clicking add btn
-  inputEl.value = '';
+  inputNameEl.value = '';
+  dueDateEl.value = '';
 
   renderTodoList();
 }
