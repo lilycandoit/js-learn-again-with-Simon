@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>lesson 11 - part2</title>
+  </head>
+  <body>
+    <p>hey, focus and don't waste time</p>
+    <script>
+      //11o - DONE, can use for loop as well =>> result: 1, 5
+
+      /*
+      const stringsList = ['hello', 'search', 'yea', 1, true, 'search'];
+
+      stringsList.forEach((string, i) => {
+        if (string === 'search') {
+          console.log(i);
+        } 
+      });
+      */
+
+
+    //11p - option 1: using break
+
+      /*
+      let words = ['hello', 'world', 'search', 'good', 'search'];
+
+      // Set the index to -1 at the start (so we'll assume
+      // the string 'search' doesn't exist in the array).
+      // If we find the string 'search' in the array, we
+      // will update the index.
+      let index = -1;
+
+      for (let i = 0; i < words.length; i++) {
+        if (words[i] === 'search') {
+          index = i;
+          break;
+        }
+      }
+
+      console.log(index);
+      */
+
+      //11p - option 2: using indexOf 
+      
+      const stringsList = ['hello', 'search', 'yea', 1, true, 'search', 6];
+
+      const word = 'search';
+      const index = stringsList.indexOf(word);
+
+      if (index !== -1) {
+        console.log(index);
+      } else {
+        console.log(-1);
+      }
+      
+
+      
+    </script>
+  </body>
+</html>
