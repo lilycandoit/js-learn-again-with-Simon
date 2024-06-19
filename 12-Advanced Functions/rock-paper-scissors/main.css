@@ -1,0 +1,32 @@
+body {
+  background-color: rgb(25, 25, 25);
+  color: white;
+  font-family: Arial;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.move-image {
+  height: 50px;
+}
+
+.move-btn {
+  background-color: transparent;
+  border: 3px solid white;
+  border-radius: 50%;
+  padding: 30px;
+  margin: 10px 5px;
+}
+
+.reset-btn, .auto-play-btn {
+  padding: 8px 15px;
+}
+
+.js-result,
+.js-show-score {
+  font-size: bigger;
+  font-weight: bold;
+}

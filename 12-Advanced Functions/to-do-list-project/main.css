@@ -1,0 +1,39 @@
+body {
+  font-family: Arial;
+}
+
+.todo-grid, .todo-grid-input {
+  display: grid;
+  grid-template-columns: 200px 150px 100px;
+  gap: 10px;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+input {
+  height: 24px;
+}
+
+button {
+  font-size: 15px;
+  width: 100px;
+  padding: 6px;
+  color: white;
+  background-color: rgb(167, 33, 33);
+  border: none;
+  border-radius: 5px;
+}
+
+.add-btn {
+  background-color: green;
+}
+
+.js-input-name {
+  font-size: 15px;
+
+}
+
+.js-input-due-date {
+}
+
+
