@@ -1,4 +1,4 @@
-const todoList = [];
+const todoList = JSON.parse(localStorage.getItem('todoList')) || [];
 
 //first render when the page is loaded.
 renderTodoList();
@@ -40,10 +40,15 @@ function addTodo() {
     name,
     dueDate,
   });
+  saveToStorage();
 
   // to clear input after clicking add btn
   inputNameEl.value = '';
   dueDateEl.value = '';
 
   renderTodoList();
+}
+
+function saveToStorage() {
+  localStorage.setItem('todoList', JSON.stringify(todoList));
 }
