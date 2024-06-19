@@ -86,8 +86,9 @@
         return -1;
       }
         */
-      
-      //shorter way of mordern JS: using findIndex
+
+      //shorter way of mordern JS: using findIndex- WORKED
+      /*
       function findIndex2(array, word) {
         return array.findIndex(element => element === word);
       }
@@ -97,8 +98,133 @@
       );
 
       console.log(result);
+      */
 
+      //11r: remove items from the array
+      /*
+      function removeEggs(foods) {
+        const result = [];
+        for (let i = 0; i < foods.length; i++) {
+          if (foods[i] === 'Egg') {
+            continue;
+          }
+          // no need else statement, because incase the if statement is false, it will auto run to this line of code
+          result.push(foods[i]);
+        }
+        // after completing the loop, it will run the final result
+        return result;
+      }
 
+      const result = removeEggs([
+        'Egg',
+        'banana',
+        'guava',
+        'apple',
+        'Egg',
+        'beer',
+      ]);
+
+      console.log(result);
+      */
+
+      //11s - remove only first 2 items out of the list
+      /*
+      function removeEggs(foods) {
+        const result = [];
+        let itemRemoved = 0;
+        for (let i = 0; i < foods.length; i++) {
+          if (foods[i] === 'Egg' && itemRemoved < 2) {
+            itemRemoved++; //we have to update the number of items removed before doing continue. otherwise, continue will skip this code
+            continue;
+          }
+          // no need else statement, because incase the if statement is false, it will auto run to this line of code
+          result.push(foods[i]);
+        }
+        // after completing the loop, it will run the final result
+        return result;
+      }
+
+      const result = removeEggs([
+        'Egg',
+        'banana',
+        'guava',
+        'apple',
+        'Egg',
+        'beer',
+        'Egg',
+        'haha',
+      ]);
+
+      console.log(result);
+      */
+
+      //11t: remove the last 2 items combining with reverse() method
+
+      /*
+      function removeEgg(foods) {
+        const result = [];
+        let itemsRemoved = 0;
+
+        const reversedFoods = foods.reverse();
+        for (let i = 0; i < reversedFoods.length; i++) {
+          if (reversedFoods[i] === 'Egg' && itemsRemoved < 2) {
+            itemsRemoved++;
+            continue;
+          }
+          result.push(reversedFoods[i]);
+        }
+
+        return result.reverse();
+      }
+
+      const foods = [
+        'Egg',
+        'banana',
+        'guava',
+        'apple',
+        'Egg',
+        'beer',
+        'Egg',
+        'haha',
+      ];
+      const result = removeEgg(foods);
+
+      console.log(result, foods);
+      // foods now becomes the reversed list, because reverse() modifies the orginal array
+      */
+
+      //11u - remove the last 2 items from the array and keep the original array. 
+
+      function removeEgg(foods) {
+        const result = [];
+        let itemsRemoved = 0;
+
+        // use slice() to make the coppy of the array,  then do reverse() after that. 
+        const reversedFoods = foods.slice().reverse();
+        for (let i = 0; i < reversedFoods.length; i++) {
+          if (reversedFoods[i] === 'Egg' && itemsRemoved < 2) {
+            itemsRemoved++;
+            continue;
+          }
+          result.push(reversedFoods[i]);
+        }
+
+        return result.reverse();
+      }
+
+      const foods = [
+        'Egg',
+        'banana',
+        'guava',
+        'apple',
+        'Egg',
+        'beer',
+        'Egg',
+        'haha',
+      ];
+      const result = removeEgg(foods);
+
+      console.log(result, foods);
     </script>
   </body>
 </html>
