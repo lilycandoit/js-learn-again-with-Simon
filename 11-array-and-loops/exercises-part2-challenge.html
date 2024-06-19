@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>array part 2 - hard ones</title>
+  </head>
+  <body>
+    <p>heyyy, you chose this path, gotta go for it</p>
+
+    <script>
+      //11v - FizzBuzz game - DONE
+
+      for (let i = 1; i <= 20; i++) {
+        if (i % 3 === 0 && i % 5 === 0) {
+          console.log('FizzBuzz');
+        } else if (i % 5 === 0) {
+          console.log('Buzz');
+        } else if (i % 3 === 0) {
+          console.log('Fizz');
+        } else {
+          console.log(i);
+        }
+      }
+
+      //11w - get the unique array using indexOf
+      function uniqueArray(array) {
+        let uniqueArray = [];
+        array.forEach((element) => {
+          if (uniqueArray.indexOf(element) === -1) {
+            uniqueArray.push(element);
+          }
+        });
+        return uniqueArray;
+      }
+
+      const array = [
+        'Egg',
+        'banana',
+        'guava',
+        'apple',
+        'Egg',
+        'beer',
+        'Egg',
+        'haha',
+      ];
+
+      const result = uniqueArray(array);
+      console.log(result);
+
+    </script>
+  </body>
+</html>
