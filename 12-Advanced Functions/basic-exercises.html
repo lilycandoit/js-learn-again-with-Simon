@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>12-exercises</title>
+    <style>
+      .finished-btn {
+        background-color: blue;
+        color: white;
+        padding: 5px;
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <p>heyyy gotta study hard man or else, you will regret</p>
+    <button class="finish-btn">Finish</button>
+
+    <!-- 12e -->
+    <button class="add-to-cart">Add to cart</button>
+    <p class="added"></p>
+
+    <script>
+      //12b - run function in function
+
+      const fun = function run() {
+        console.log('heyyya, you gotta be persistant');
+      };
+
+      const add = () => {
+        console.log('hiiii lily');
+      };
+
+      function runTwice(fun) {
+        fun();
+        fun();
+      }
+
+      runTwice(fun);
+      runTwice(add);
+
+      // 12c,d- change btn after 1s
+      const btn = document.querySelector('.finish-btn');
+
+      btn.addEventListener('click', changeBtn);
+
+      function changeBtn() {
+        setTimeout(() => {
+          btn.innerText = 'Finished';
+          btn.classList.add('finished-btn');
+        }, 1000);
+
+        btn.innerText = 'Loading...';
+      }
+
+      //12e, f - create add-to-cart button
+      const cartBtn = document.querySelector('.add-to-cart');
+      cartBtn.addEventListener('click', cartChange);
+
+      let timeoutId;
+
+      function cartChange() {
+        document.querySelector('.added').innerText = 'Added';
+
+        // first, cancel the previous timeout so that it does not remove the message too quickly
+        clearTimeout(timeoutId);
+
+        timeoutId = setTimeout(() => {
+          document.querySelector('.added').innerText = '';
+        }, 2000);
+      }
+    </script>
+  </body>
+</html>
