@@ -23,6 +23,10 @@
     <!-- 12e -->
     <button class="add-to-cart">Add to cart</button>
     <p class="added"></p>
+    <div>
+      <button class="add">Add</button>
+      <button class="remove">Remove</button>
+    </div>
 
     <script>
       //12b - run function in function
@@ -73,6 +77,48 @@
           document.querySelector('.added').innerText = '';
         }, 2000);
       }
+
+      //12g - generate dynamic title auto running by setInterval
+      /*
+      function generateRandomString(length) {
+        const characters =
+          'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        let result = '';
+        for (let i = 0; i < length; i++) {
+          const randomIndex = Math.floor(Math.random() * characters.length);
+          result += characters.charAt(randomIndex);
+        }
+        return result;
+      }
+
+      const randomText = generateRandomString(15);
+
+      setInterval(() => {
+        document.title = randomText;
+      }, 500);
+      */
+
+      //12h - change title when interacting with buttons - DONE
+      let message = 2;
+      setInterval(() => {
+        if (message <= 0) {
+          document.title = 'App';
+        } else {
+          document.title = `(${message}) new messages`;
+        }
+      }, 1000);
+
+      document.querySelector('.add').addEventListener('click', () => {
+        message++;
+        setInterval;
+      });
+
+      document.querySelector('.remove').addEventListener('click', () => {
+        message--;
+        setInterval;
+      });
+
+      //
     </script>
   </body>
 </html>
