@@ -10,6 +10,31 @@ displayScore();
 let isAutoPlaying = false;
 let intervalId; // we have to put the intervalId outside of the function, so we get the latest update of intervalId (since the intervalI keeps changing each time the function runs)
 
+document.querySelector('.js-rock-btn').addEventListener('click', () => {
+  displayResult('rock');
+});
+document.querySelector('.js-paper-btn').addEventListener('click', () => {
+  displayResult('paper');
+});
+document.querySelector('.js-scissors-btn').addEventListener('click', () => {
+  displayResult('scissors');
+});
+
+document.querySelector('.js-reset-btn').addEventListener('click', resetScore);
+
+document.querySelector('.js-auto-play-btn').addEventListener('click', autoPlay);
+
+//play game with keyDown intead of click event
+document.body.addEventListener('keydown', (event) => {
+  if (event.key === 'r') {
+    displayResult('rock');
+  } else if (event.key === 'p') {
+    displayResult('paper');
+  } else if (event.key === 's') {
+    displayResult('scissors');
+  }
+});
+
 function autoPlay() {
   if (!isAutoPlaying) {
     intervalId = setInterval(() => {
@@ -68,13 +93,23 @@ function displayResult(playerMove) {
 
   document.querySelector('.js-result').innerText = `Result: ${result}`;
 
-  document.querySelector('.js-option').innerHTML = `You <img src="${playerMove}-emoji.png" class="move-image"> <img src="${computerMove}-emoji.png" class="move-image"> Computer`;
+  document.querySelector(
+    '.js-option'
+  ).innerHTML = `You <img src="${playerMove}-emoji.png" class="move-image"> <img src="${computerMove}-emoji.png" class="move-image"> Computer`;
 }
 
 function displayScore() {
   document.querySelector(
     '.js-show-score'
   ).innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
+}
+
+function resetScore() {
+  score.wins = 0;
+  score.losses = 0;
+  score.ties = 0;
+  localStorage.removeItem('score');
+  displayScore();
 }
 
 function pickComputerMove() {

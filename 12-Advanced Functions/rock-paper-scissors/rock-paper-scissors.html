@@ -16,10 +16,7 @@
     <p class="title">Rock-paper-scissors</p>
     <div>
       <button
-        class="move-btn"
-        onclick="
-        displayResult('rock');
-        "
+        class="move-btn js-rock-btn"
       >
         <img
           src="rock-emoji.png"
@@ -27,11 +24,7 @@
         />
       </button>
       <button
-        class="move-btn"
-        onclick="
-        displayResult('paper');
-
-      "
+        class="move-btn js-paper-btn"
       >
         <img
           src="paper-emoji.png"
@@ -39,10 +32,7 @@
         />
       </button>
       <button
-        class="move-btn"
-        onclick="
-        displayResult('scissors')
-      "
+        class="move-btn js-scissors-btn"
       >
         <img
           src="scissors-emoji.png"
@@ -55,19 +45,11 @@
       <p class="js-show-score">Wins: 0, Losses: 0, Ties: 0</p>
       <button
         class="js-reset-btn reset-btn"
-        onclick="
-        score.wins= 0;
-        score.losses= 0;
-        score.ties= 0;
-        localStorage.removeItem('score');
-        displayScore();
-      "
       >
         Reset Score
       </button>
       <button
-        class="auto-play-btn"
-        onclick="autoPlay()"
+        class="auto-play-btn js-auto-play-btn"
       >
         Auto Play
       </button>
