@@ -3,6 +3,8 @@ const todoList = JSON.parse(localStorage.getItem('todoList')) || [];
 //first render when the page is loaded.
 renderTodoList();
 
+document.querySelector('.js-add-btn').addEventListener('click', addTodo);
+
 function renderTodoList() {
   let todoListHTML = '';
 
@@ -12,10 +14,7 @@ function renderTodoList() {
       <div>${name}</div>
       <div>${dueDate}</div>
       <div>
-        <button onclick="
-          todoList.splice(${index}, 1);
-          renderTodoList();
-        ">Delete</button>
+        <button class='js-delete-btn'>Delete</button>
       </div>
     `;
 
@@ -23,6 +22,14 @@ function renderTodoList() {
   });
 
   document.querySelector('.js-todo-list').innerHTML = todoListHTML;
+
+  // we have to run eventListener code after creating HTML
+  document.querySelectorAll('.js-delete-btn').forEach((deleteBtn, index) => {
+    deleteBtn.addEventListener('click', () => {
+      todoList.splice(index, 1);
+      renderTodoList();
+    });
+  });
 }
 
 function addTodo() {
