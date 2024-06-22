@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>lessons</title>
+  </head>
+  <body>
+    <p>heyyy stay awake, ukie</p>
+    <script>
+
+      // filter
+      const checkPositiveNum1 = (array) => {
+        return array.filter((value, index) => value >=0);
+      };
+
+      console.log(checkPositiveNum1([1, 4, 5, -3, -2, 6]));
+
+      //map
+      const checkPositiveNum2 = (array) => {
+        return array.map((value, index) => value *2);
+      };
+
+      console.log(checkPositiveNum2([1, 4, 5, -3, -2, 6]));
+
+      //forEach
+      const checkPositiveNum3= (array) => {
+        return array.forEach((value, index) => value >=0);
+      };
+
+      console.log(checkPositiveNum3([1, 4, 5, -3, -2, 6]));
+    </script>
+  </body>
+</html>

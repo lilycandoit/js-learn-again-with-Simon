@@ -118,7 +118,20 @@
         setInterval;
       });
 
-      //
+      //12l
+      function countPositive(nums) {
+        let positiveNums = [];
+        nums.forEach((num, index) => {
+          if (num >= 0) {
+            positiveNums.push(num);
+          }
+        });
+
+        return positiveNums.length;
+      }
+
+      const test1 = countPositive([1, 4, -5, 6, 8, -2]);
+      console.log(test1);
     </script>
   </body>
 </html>

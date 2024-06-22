@@ -20,7 +20,9 @@ document.querySelector('.js-scissors-btn').addEventListener('click', () => {
   displayResult('scissors');
 });
 
-document.querySelector('.js-reset-btn').addEventListener('click', resetScore);
+document
+  .querySelector('.js-reset-btn')
+  .addEventListener('click', confirmResetScore);
 
 document.querySelector('.js-auto-play-btn').addEventListener('click', autoPlay);
 
@@ -32,6 +34,10 @@ document.body.addEventListener('keydown', (event) => {
     displayResult('paper');
   } else if (event.key === 's') {
     displayResult('scissors');
+  } else if (event.key === 'a') {
+    autoPlay();
+  } else if (event.key === ' ') {
+    confirmResetScore();
   }
 });
 
@@ -43,9 +49,11 @@ function autoPlay() {
     }, 1000);
 
     isAutoPlaying = true;
+    document.querySelector('.js-auto-play-btn').innerText = 'Stop playing';
   } else {
     clearInterval(intervalId);
     isAutoPlaying = false;
+    document.querySelector('.js-auto-play-btn').innerText = 'Auto play';
   }
 }
 
@@ -110,6 +118,26 @@ function resetScore() {
   score.ties = 0;
   localStorage.removeItem('score');
   displayScore();
+}
+
+function confirmResetScore() {
+  const confirmMess = document.querySelector('.confirm-mess');
+
+  confirmMess.innerHTML = `
+    Are you sure you want to reset score? 
+        <button class="yes">Yes</button>
+        <button class="no">No</button>
+  `;
+
+  // reset score happens only after generating the HTML of confirm message
+  document.querySelector('.yes').addEventListener('click', () => {
+    resetScore();
+    confirmMess.innerHTML = '';
+  });
+
+  document.querySelector('.no').addEventListener('click', () => {
+    confirmMess.innerHTML = '';
+  });
 }
 
 function pickComputerMove() {
